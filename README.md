@@ -190,7 +190,7 @@ package.json の "scripts" セクションにデプロイスクリプトを追�
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist" // Deploy the build output to gh-pages branch
+    "deploy": "gh-pages -d dist"
   }
 }
 ```
@@ -211,3 +211,39 @@ npm run deploy
 ```
 
 これで、`https://<あなたのユーザー名>.github.io/my-pwa-app/` でPWAが公開されます。
+
+## Q. ソースコードを編集したいんだが？
+
+ソースコードの編集は、基本的には以下の手順で行います。
+
+1. コードエディタで編集  
+   Visual Studio Code などのお好みのエディタで、プロジェクトフォルダ（例: `my-pwa-app`）を開きます。  
+   例: `src/App.tsx` や他の必要なファイルを修正してください。
+
+2. ローカルで動作確認  
+   編集後、ターミナルで以下のコマンドを実行し、開発サーバーを起動して変更が反映されているか確認します。
+
+```bash
+npm run dev
+```
+
+3. Gitで変更を管理  
+   編集が完了したら、Git を使って変更をコミットします。  
+   ターミナルで以下を実行してください：
+
+```bash
+git add .
+git commit -m "Describe your changes here"
+git push
+```
+
+4. GitHub Pages への再デプロイ  
+   GitHub Pages に公開している場合、再度ビルドとデプロイを行う必要があります。  
+   以下のコマンドで実行してください：
+
+```bash
+npm run build
+npm run deploy
+```
+
+この流れでソースコードを編集・テストし、リモートリポジトリや GitHub Pages に反映させることができます。
